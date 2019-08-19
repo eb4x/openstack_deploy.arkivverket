@@ -53,6 +53,22 @@ cinder_backends:
 # hosts.
 nova_libvirt_images_rbd_pool: vms
 
+## Common Neutron Overrides
+neutron_plugin_type: ml2.ovs.dvr
+neutron_l2_population: true
+neutron_provider_networks:
+  network_flat_networks: "physnet1"
+  network_mappings: "physnet1:br-provider"
+  network_interface: "{{ ('network_containers' in group_names) | ternary('eth11', 'br-vlan') }}"
+  network_types: "vxlan,vlan,flat"
+  network_vlan_ranges: "physnet1:3:4,physnet1:203:204,physnet1:1201:1202"
+  network_vxlan_ranges: "1:1000"
+
+openstack_host_specific_kernel_modules:
+  - name: "openvswitch"
+    pattern: "CONFIG_OPENVSWITCH"
+    group: "network_hosts"
+
 # If you wish to change the dhcp_domain configured for both nova and neutron
 # dhcp_domain: openstacklocal
 
