@@ -199,6 +199,10 @@ haproxy_keepalived_internal_virtual_router_id: 111
 # haproxy_keepalived_priority_master:
 # haproxy_keepalived_priority_backup:
 
+haproxy_user_ssl_cert: /etc/openstack_deploy/ssl/openstack-test.arkivverket.no.pem
+haproxy_user_ssl_key: /etc/openstack_deploy/ssl/openstack-test.arkivverket.no.key
+#haproxy_user_ssl_ca_cert:
+
 # Keepalived default IP address used to check its alive status (IPv4 only)
 keepalived_ping_address: "10.20.21.254"
 
