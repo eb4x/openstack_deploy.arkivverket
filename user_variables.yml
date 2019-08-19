@@ -199,6 +199,9 @@ haproxy_keepalived_internal_interface: br-mgmt
 # haproxy_keepalived_priority_master:
 # haproxy_keepalived_priority_backup:
 
+haproxy_stats_enabled: true
+haproxy_stats_bind_address: "{{ external_lb_vip_address }}"
+
 haproxy_user_ssl_cert:
 haproxy_user_ssl_key:
 #haproxy_user_ssl_ca_cert:
