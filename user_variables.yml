@@ -199,6 +199,9 @@ haproxy_keepalived_internal_virtual_router_id: 111
 # haproxy_keepalived_priority_master:
 # haproxy_keepalived_priority_backup:
 
+haproxy_stats_enabled: true
+haproxy_stats_bind_address: "{{ external_lb_vip_address }}"
+
 haproxy_user_ssl_cert: /etc/openstack_deploy/ssl/openstack-test.arkivverket.no.pem
 haproxy_user_ssl_key: /etc/openstack_deploy/ssl/openstack-test.arkivverket.no.key
 #haproxy_user_ssl_ca_cert:
