@@ -1,0 +1,9 @@
+---
+osd_scenario: collocated
+devices:
+  - /dev/mapper/mpatha
+  - /dev/mapper/mpathb
+  - /dev/mapper/mpathc
+  - /dev/mapper/mpathd
+  - /dev/mapper/mpathe
+  - /dev/mapper/mpathf
