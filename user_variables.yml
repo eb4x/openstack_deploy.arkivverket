@@ -224,7 +224,7 @@ deployment_environment_variables:
 # HAProxy Keepalived configuration (cf. documentation)
 # Make sure that this is set correctly according to the CIDR used for your
 # internal and external addresses.
-haproxy_keepalived_external_vip_cidr: "{{external_lb_vip_address}}/24"
+haproxy_keepalived_external_vip_cidr: "10.20.21.32/24"
 haproxy_keepalived_internal_vip_cidr: "{{internal_lb_vip_address}}/24"
 haproxy_keepalived_external_interface: "{{ ('br-maas' in ansible_interfaces) | ternary('br-maas', 'eth0') }}"
 haproxy_keepalived_internal_interface: br-mgmt

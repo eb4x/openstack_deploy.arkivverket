@@ -33,8 +33,8 @@ global_overrides:
   # If using different protocols (https/http) for the public/internal
   # endpoints the two addresses must be different.
   #
-  external_lb_vip_address: 10.20.21.32 # osa  openstack-test.arkivverket.no
-# external_lb_vip_address: 10.20.21.33 # vrtx openstack.arkivverket.no
+  external_lb_vip_address: openstack-test.arkivverket.no # test 10.20.21.32
+# external_lb_vip_address: openstack.arkivverket.no      # vrtx 10.20.21.33
 
   tunnel_bridge: "br-vxlan"
   management_bridge: "br-mgmt"
