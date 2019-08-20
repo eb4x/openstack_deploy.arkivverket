@@ -209,20 +209,26 @@ haproxy_user_ssl_key:
 # Keepalived default IP address used to check its alive status (IPv4 only)
 keepalived_ping_address: "10.20.21.254"
 
-## Ceph cluster fsid (must be generated before first run)
-## Generate a uuid using: python -c 'import uuid; print(str(uuid.uuid4()))'
-generate_fsid: false
-fsid: 116f14c4-7fe1-40e4-94eb-9240b63de5c1 # Replace with your generated UUID
-
 ## ceph-ansible settings
 ## See https://github.com/ceph/ceph-ansible/tree/master/group_vars for
 ## additional configuration options availble.
+#[all.yml]
+
+## Ceph cluster fsid (must be generated before first run)
+## Generate a uuid using: python -c 'import uuid; print(str(uuid.uuid4()))'
+fsid: 116f14c4-7fe1-40e4-94eb-9240b63de5c1 # Replace with your generated UUID
+generate_fsid: false
+
 monitor_address_block: "{{ cidr_networks.container }}"
+journal_size: 10240 # size in MB
 public_network: "{{ cidr_networks.container }}"
 cluster_network: "{{ cidr_networks.storage }}"
-osd_scenario: collocated
-journal_size: 10240 # size in MB
+
 # ceph-ansible automatically creates pools & keys for OpenStack services
 openstack_config: true
+
+#[osds.yml]
+osd_scenario: collocated
+
 cinder_ceph_client: cinder
 glance_ceph_client: glance
