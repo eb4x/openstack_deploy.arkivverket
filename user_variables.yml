@@ -214,6 +214,7 @@ security_ntp_servers:
   - 10.20.21.1
   - 10.17.2.206
   - 10.17.2.221
+security_rhel7_session_timeout: 0
 
 ## ceph-ansible settings
 ## See https://github.com/ceph/ceph-ansible/tree/master/group_vars for
