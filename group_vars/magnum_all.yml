@@ -7,3 +7,5 @@ global_environment_variables:
   http_proxy: "{{ proxy_env_url }}"
   https_proxy: "{{ proxy_env_url }}"
   no_proxy: "{{ no_proxy_env }}"
+
+keystone_service_internaluri_insecure: True
