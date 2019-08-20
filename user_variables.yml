@@ -209,17 +209,25 @@ haproxy_user_ssl_key: /etc/openstack_deploy/ssl/openstack.arkivverket.no.key
 # Keepalived default IP address used to check its alive status (IPv4 only)
 keepalived_ping_address: "10.20.21.254"
 
-## Ceph cluster fsid (must be generated before first run)
-## Generate a uuid using: python -c 'import uuid; print(str(uuid.uuid4()))'
-generate_fsid: false
-fsid: 01234567-89ab-cdef-fedc-ba9876543210
-
 ## ceph-ansible settings
 ## See https://github.com/ceph/ceph-ansible/tree/master/group_vars for
 ## additional configuration options availble.
+#[all.yml]
+
+## Ceph cluster fsid (must be generated before first run)
+## Generate a uuid using: python -c 'import uuid; print(str(uuid.uuid4()))'
+fsid: 01234567-89ab-cdef-fedc-ba9876543210
+generate_fsid: false
+
 monitor_address_block: "{{ cidr_networks.container }}"
+journal_size: 10240 # size in MB
 public_network: "{{ cidr_networks.container }}"
 cluster_network: "{{ cidr_networks.storage }}"
+
+# ceph-ansible automatically creates pools & keys for OpenStack services
+openstack_config: true
+
+#[osds.yml]
 devices:
   - /dev/sdb
   - /dev/sdc
@@ -227,8 +235,6 @@ devices:
   - /dev/sde
   - /dev/sdf
 osd_scenario: collocated
-journal_size: 10240 # size in MB
-# ceph-ansible automatically creates pools & keys for OpenStack services
-openstack_config: true
+
 cinder_ceph_client: cinder
 glance_ceph_client: glance
