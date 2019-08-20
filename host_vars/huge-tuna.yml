@@ -1,5 +1,5 @@
 ---
-osd_scenario: collocated
+osd_scenario: lvm
 devices:
   - /dev/mapper/mpatha
   - /dev/mapper/mpathb
