@@ -72,6 +72,9 @@ openstack_host_specific_kernel_modules:
 # If you wish to change the dhcp_domain configured for both nova and neutron
 # dhcp_domain: openstacklocal
 
+## Common Horizon Overrides
+horizon_enable_password_retrieve: true
+
 ## Common Glance Overrides when using a Swift back-end
 # By default when 'glance_default_store' is set to 'swift' the playbooks will
 # expect to use the Swift back-end that is configured in the same inventory.
