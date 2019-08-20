@@ -228,6 +228,9 @@ osd_objectstore: bluestore
 # ceph-ansible automatically creates pools & keys for OpenStack services
 openstack_config: true
 
+#[mgrs.yml]
+ceph_mgr_modules: ['status', 'prometheus']
+
 #[osds.yml]
 devices:
   - /dev/sdb
