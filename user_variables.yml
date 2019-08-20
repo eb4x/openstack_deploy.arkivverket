@@ -54,6 +54,9 @@ cinder_backends:
 nova_libvirt_images_rbd_pool: vms
 
 ## Common Neutron Overrides
+#neutron_dns_domain:
+neutron_dnsmasq_dns_servers: 10.17.2.206, 10.17.2.221
+
 neutron_plugin_type: ml2.ovs.dvr
 neutron_l2_population: true
 neutron_provider_networks:
