@@ -64,11 +64,6 @@ neutron_provider_networks:
   network_vlan_ranges: "physnet1:3:4,physnet1:203:204,physnet1:1201:1202"
   network_vxlan_ranges: "1:1000"
 
-openstack_host_specific_kernel_modules:
-  - name: "openvswitch"
-    pattern: "CONFIG_OPENVSWITCH"
-    group: "network_hosts"
-
 # If you wish to change the dhcp_domain configured for both nova and neutron
 # dhcp_domain: openstacklocal
 
