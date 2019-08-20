@@ -168,3 +168,6 @@ network_hosts: *infrastructure_hosts
 
 # ceilometer compute agent (telemetry data collection)
 #metering-compute_hosts: *compute_hosts
+
+# magnum
+magnum-infra_hosts: *infrastructure_hosts
