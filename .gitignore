@@ -1,0 +1,9 @@
+ansible_facts/
+ceph-fetch/
+ssl/
+upgrade-*/
+backup_openstack_inventory.tar
+inventory.ini
+openstack_hostnames_ips.yml
+openstack_inventory.json
+user_secrets.*
