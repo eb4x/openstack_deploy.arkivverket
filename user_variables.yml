@@ -247,13 +247,6 @@ openstack_config: true
 ceph_mgr_modules: ['status', 'prometheus']
 
 #[osds.yml]
-devices:
-  - /dev/sdb
-  - /dev/sdc
-  - /dev/sdd
-  - /dev/sde
-  - /dev/sdf
-osd_scenario: collocated
 
 cinder_ceph_client: cinder
 glance_ceph_client: glance
