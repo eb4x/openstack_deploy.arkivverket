@@ -21,6 +21,22 @@
 ## Debug and Verbose options.
 debug: false
 
+profiler_overrides: &os_profiler
+  profiler:
+    enabled: true
+    trace_sqlalchemy: true
+    hmac_keys: "0123456789abcdef01234567"  # This needs to be set consistently throughout the deployment
+    connection_string: "Elasticsearch://{{ internal_lb_vip_address }}:9201"
+    es_doc_type: "notification"
+    es_scroll_time: "2m"
+    es_scroll_size: "10000"
+    filter_error_trace: "false"
+
+## Common Keystone Overrides
+keystone_keystone_conf_overrides: *os_profiler
+
+barbican_config_overrides: *os_profiler
+
 ## Common Glance Overrides
 # Set glance_default_store to "swift" if using Cloud Files backend
 # or "rbd" if using ceph backend; the latter will trigger ceph to get
@@ -36,6 +52,8 @@ glance_default_store: rbd
 glance_rbd_store_pool: images
 # glance_rbd_store_chunk_size: 8
 
+glance_glance_api_conf_overrides: *os_profiler
+
 ## Common Cinder Overrides
 cinder_backends:
   RBD:
@@ -48,14 +66,20 @@ cinder_backends:
     rbd_secret_uuid: "{{ cinder_ceph_client_uuid }}"
     report_discard_supported: true
 
+cinder_cinder_conf_overrides: *os_profiler
+
 ## Common Nova Overrides
 # When nova_libvirt_images_rbd_pool is defined, ceph will be installed on nova
 # hosts.
 nova_libvirt_images_rbd_pool: vms
+nova_nova_conf_overrides: *os_profiler
+
 
 ## Common Neutron Overrides
 neutron_dns_domain: "openstack.maas."
 neutron_dnsmasq_dns_servers: "10.20.21.1"
+
+neutron_neutron_conf_overrides: *os_profiler
 
 neutron_plugin_type: ml2.ovs.dvr
 neutron_l2_population: true
@@ -70,13 +94,32 @@ neutron_provider_networks:
 # If you wish to change the dhcp_domain configured for both nova and neutron
 # dhcp_domain: openstacklocal
 
+## Common Heat Overrides
+heat_heat_conf_overrides: *os_profiler
+
 ## Common Horizon Overrides
+horizon_config_overrides: *os_profiler
 horizon_enable_password_retrieve: true
+
+designate_designate_conf_overrides: *os_profiler
+swift_swift_conf_overrides: *os_profiler
+gnocchi_conf_overrides: *os_profiler
+ceilometer_ceilometer_conf_overrides: *os_profiler
+aodh_aodh_conf_overrides: *os_profiler
+ironic_ironic_conf_overrides: *os_profiler
 
 ## Common Magnum Overrides
 magnum_config_overrides:
   cinder:
     default_docker_volume_type: RBD
+  <<: *os_profiler
+
+trove_config_overrides: *os_profiler
+sahara_conf_overrides: *os_profiler
+octavia_octavia_conf_overrides: *os_profiler
+tacker_tacker_conf_overrides: *os_profiler
+
+rally_config_overrides: *os_profiler
 
 ## Common Glance Overrides when using a Swift back-end
 # By default when 'glance_default_store' is set to 'swift' the playbooks will
