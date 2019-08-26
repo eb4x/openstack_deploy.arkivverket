@@ -205,6 +205,22 @@ haproxy_keepalived_internal_virtual_router_id: 111
 # haproxy_keepalived_priority_master:
 # haproxy_keepalived_priority_backup:
 
+haproxy_extra_services:
+  - service:
+      haproxy_service_name: elastic-logstash
+      haproxy_ssl: False
+      haproxy_backend_nodes: "{{ groups['Kibana'] | default([]) }}"  # Kibana nodes are also Elasticsearch coordination nodes
+      haproxy_port: 9201  # This is set using the "elastic_hap_port" variable
+      haproxy_check_port: 9200  # This is set using the "elastic_port" variable
+      haproxy_backend_port: 9200  # This is set using the "elastic_port" variable
+      haproxy_balance_type: tcp
+  - service:
+      haproxy_service_name: Kibana
+      haproxy_ssl: False
+      haproxy_backend_nodes: "{{ groups['Kibana'] | default([]) }}"
+      haproxy_port: 81  # This is set using the "Kibana_nginx_port" variable
+      haproxy_balance_type: tcp
+
 haproxy_stats_enabled: true
 haproxy_stats_bind_address: "{{ external_lb_vip_address }}"
 
