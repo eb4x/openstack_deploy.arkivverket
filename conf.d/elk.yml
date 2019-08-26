@@ -1,0 +1,9 @@
+# For the puposes of this example, the kibana nodes have been added to
+# different host machines that the logging nodes. The intention here
+# is to show that the different components can scale independently of
+# one another.
+kibana_hosts: *infrastructure_hosts
+
+elastic-logstash_hosts: *log_hosts
+
+apm-server_hosts: *log_hosts
