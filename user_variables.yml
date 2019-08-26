@@ -61,6 +61,22 @@ openstack_domain: openstack.maas
 tempest_install: false
 tempest_run: false
 
+profiler_overrides: &os_profiler
+  profiler:
+    enabled: true
+    trace_sqlalchemy: true
+    hmac_keys: "0123456789abcdef01234567"  # This needs to be set consistently throughout the deployment
+    connection_string: "Elasticsearch://{{ internal_lb_vip_address }}:9201"
+    es_doc_type: "notification"
+    es_scroll_time: "2m"
+    es_scroll_size: "10000"
+    filter_error_trace: "false"
+
+## Common Keystone Overrides
+keystone_keystone_conf_overrides: *os_profiler
+
+barbican_config_overrides: *os_profiler
+
 ## Common Glance Overrides
 # Set glance_default_store to "swift" if using Cloud Files backend
 # or "rbd" if using ceph backend; the latter will trigger ceph to get
@@ -76,6 +92,8 @@ glance_default_store: rbd
 glance_rbd_store_pool: images
 # glance_rbd_store_chunk_size: 8
 
+glance_glance_api_conf_overrides: *os_profiler
+
 ## Common Cinder Overrides
 cinder_backends:
   RBD:
@@ -89,6 +107,8 @@ cinder_backends:
     report_discard_supported: true
 cinder_service_backup_driver: cinder.backup.drivers.ceph.CephBackupDriver
 
+cinder_cinder_conf_overrides: *os_profiler
+
 ## Common Nova Overrides
 nova_galera_database: nova_cell1
 # When nova_libvirt_images_rbd_pool is defined, ceph will be installed on nova
@@ -99,11 +119,14 @@ nova_nova_conf_overrides:
   libvirt:
     cpu_model: Westmere-IBRS
     cpu_model_extra_flags: pcid
+  <<: *os_profiler
 nova_virt_type: kvm
 
 ## Common Neutron Overrides
 neutron_dns_domain: "openstack.maas."
 neutron_dnsmasq_dns_servers: "10.20.21.1"
+
+neutron_neutron_conf_overrides: *os_profiler
 
 neutron_plugin_type: ml2.ovs
 neutron_l2_population: true
@@ -118,14 +141,33 @@ neutron_provider_networks:
 # If you wish to change the dhcp_domain configured for both nova and neutron
 # dhcp_domain: openstacklocal
 
+## Common Heat Overrides
+heat_heat_conf_overrides: *os_profiler
+
 ## Common Horizon Overrides
+horizon_config_overrides: *os_profiler
 horizon_enable_password_retrieve: true
 horizon_show_keystone_v2_rc: false
+
+designate_designate_conf_overrides: *os_profiler
+swift_swift_conf_overrides: *os_profiler
+gnocchi_conf_overrides: *os_profiler
+ceilometer_ceilometer_conf_overrides: *os_profiler
+aodh_aodh_conf_overrides: *os_profiler
+ironic_ironic_conf_overrides: *os_profiler
 
 ## Common Magnum Overrides
 magnum_config_overrides:
   cinder:
     default_docker_volume_type: RBD
+  <<: *os_profiler
+
+trove_config_overrides: *os_profiler
+sahara_conf_overrides: *os_profiler
+octavia_octavia_conf_overrides: *os_profiler
+tacker_tacker_conf_overrides: *os_profiler
+
+rally_config_overrides: *os_profiler
 
 ## Common Glance Overrides when using a Swift back-end
 # By default when 'glance_default_store' is set to 'swift' the playbooks will
@@ -260,6 +302,28 @@ haproxy_stats_bind_address: "{{ external_lb_vip_address }}"
 haproxy_user_ssl_cert: /etc/openstack_deploy/ssl/openstack-test.arkivverket.no.pem
 haproxy_user_ssl_key: /etc/openstack_deploy/ssl/openstack-test.arkivverket.no.key
 #haproxy_user_ssl_ca_cert:
+
+haproxy_extra_services:
+  - service:
+      haproxy_service_name: elastic-logstash
+      haproxy_ssl: False
+      haproxy_backend_nodes: "{{ groups['kibana'] | default([]) }}"  # Kibana nodes are also Elasticsearch coordination nodes
+      haproxy_port: 9201  # This is set using the "elastic_hap_port" variable
+      haproxy_check_port: 9200  # This is set using the "elastic_port" variable
+      haproxy_backend_port: 9200  # This is set using the "elastic_port" variable
+      haproxy_balance_type: tcp
+  - service:
+      haproxy_service_name: Kibana
+      haproxy_ssl: False
+      haproxy_backend_nodes: "{{ groups['kibana'] | default([]) }}"
+      haproxy_port: 81  # This is set using the "Kibana_nginx_port" variable
+      haproxy_balance_type: tcp
+  - service:
+      haproxy_service_name: apm-server
+      haproxy_ssl: False
+      haproxy_backend_nodes: "{{ groups['apm-server'] | default([]) }}"
+      haproxy_port: 8200 # this is set using the "apm_port" variable
+      haproxy_balance_type: tcp
 
 # Keepalived default IP address used to check its alive status (IPv4 only)
 keepalived_ping_address: "10.20.21.254"
