@@ -2,8 +2,18 @@
 # different host machines that the logging nodes. The intention here
 # is to show that the different components can scale independently of
 # one another.
-kibana_hosts: *infrastructure_hosts
+kibana_hosts:
+  proven-wombat:
+    ip: 172.16.2.3
+  guided-fawn:
+    ip: 172.16.2.4
+  grown-cobra:
+    ip: 172.16.2.5
 
-elastic-logstash_hosts: *log_hosts
+elastic-logstash_hosts:
+  upward-teal:
+    ip: 172.16.2.2
 
-apm-server_hosts: *log_hosts
+apm-server_hosts:
+  upward-teal:
+    ip: 172.16.2.2
