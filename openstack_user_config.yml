@@ -157,7 +157,13 @@ orchestration_hosts: *infrastructure_hosts
 dashboard_hosts: *infrastructure_hosts
 
 # neutron server, agents (L3, etc)
-network_hosts: *infrastructure_hosts
+network_hosts:
+  proven-wombat:
+    ip: 172.16.2.3
+  guided-fawn:
+    ip: 172.16.2.4
+  giving-prawn:
+    ip: 172.16.2.17
 
 # ceilometer (telemetry data collection)
 #metering-infra_hosts: *infrastructure_hosts
