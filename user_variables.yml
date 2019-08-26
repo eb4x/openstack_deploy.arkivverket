@@ -220,6 +220,12 @@ haproxy_extra_services:
       haproxy_backend_nodes: "{{ groups['Kibana'] | default([]) }}"
       haproxy_port: 81  # This is set using the "Kibana_nginx_port" variable
       haproxy_balance_type: tcp
+  - service:
+      haproxy_service_name: apm-server
+      haproxy_ssl: False
+      haproxy_backend_nodes: "{{ groups['apm-server'] | default([]) }}"
+      haproxy_port: 8200 # this is set using the "apm_port" variable
+      haproxy_balance_type: tcp
 
 haproxy_stats_enabled: true
 haproxy_stats_bind_address: "{{ external_lb_vip_address }}"
