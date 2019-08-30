@@ -21,6 +21,18 @@
 ## Debug and Verbose options.
 debug: false
 
+repo_venv_default_pip_packages:
+  - elasticsearch
+
+repo_build_upper_constraints_overrides:
+  - elasticsearch>=6.0.0,<7.0.0
+
+repo_build_git_reclone: true
+repo_build_venv_rebuild: true
+repo_build_wheel_rebuild: true
+
+repo_build_wheel_selective: false
+
 profiler_overrides: &os_profiler
   profiler:
     enabled: true

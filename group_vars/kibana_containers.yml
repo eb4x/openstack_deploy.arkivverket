@@ -1,0 +1,6 @@
+---
+#pip_default_index: https://pypi.python.org/simple
+
+pip_global_conf_overrides:
+  global:
+    index-url: https://pypi.python.org/simple
