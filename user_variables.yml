@@ -225,7 +225,11 @@ security_rhel7_session_timeout: 0
 ## ceph-ansible settings
 ## See https://github.com/ceph/ceph-ansible/tree/master/group_vars for
 ## additional configuration options availble.
+
 #[all.yml]
+# Enable the ntp service by default to avoid clock skew on ceph nodes
+# Disable if an appropriate NTP client is already installed and configured
+ntp_service_enabled: false
 
 ## Ceph cluster fsid (must be generated before first run)
 ## Generate a uuid using: python -c 'import uuid; print(str(uuid.uuid4()))'
