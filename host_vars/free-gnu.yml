@@ -1,0 +1,31 @@
+---
+#[osds.yml]
+lvm_volumes:
+  - data_vg: ceph-5f91a1bd-3aea-40fe-af23-5fb581bdefe4
+    data: osd-block-a7d5b5a2-e00a-4e60-8ffe-817cfadc337d
+  - data_vg: ceph-8f6991cf-8f3d-4c9d-8086-daaf2f323098
+    data: osd-block-29d5a1fb-0a10-43d1-994c-e2172da65bce
+  - data_vg: ceph-34be1ff8-1675-45bc-a5a4-bd0456a19b48
+    data: osd-block-b5771208-22ac-4b97-9f38-9ea8f9b96df7
+  - data_vg: ceph-7d03a819-0f59-4046-9d65-70eb1ba2eebf
+    data: osd-block-96db2b2b-f18a-4681-9b4c-fec5d3f9bc8d
+  - data_vg: ceph-6dfe8f42-6769-408d-98e3-a459bb93668f
+    data: osd-block-8431deec-56b3-4486-b723-98a034c12c17
+  - data_vg: ceph-76adf0af-0449-4f86-9bb0-9eba9a49fc04
+    data: osd-block-6ec7fa24-c3a9-40c5-88fb-48eb29a17b10
+  - data_vg: ceph-9a1941b3-5164-4d0a-ac91-3633306fade1
+    data: osd-block-d8eeaf32-f3c8-4d84-8985-b92ebe758467
+  - data_vg: ceph-aff6a15c-8e91-400d-83c9-a39b8a85b3d7
+    data: osd-block-1f0f016f-0a47-43d5-b9b4-ec6459e5d8ec
+  - data_vg: ceph-136c9214-0bf1-43aa-bc81-932285d18f3c
+    data: osd-block-a37406b4-4331-4d51-9a04-f55894675fe3
+  - data_vg: ceph-1f053736-8021-4dab-b840-f8ad8a16933d
+    data: osd-block-4b647eeb-9665-497d-bdef-9aef964fb5a0
+  - data_vg: ceph-15d5937e-25cb-4d8b-aea2-5422a88a1d03
+    data: osd-block-736bbe98-4537-43ac-bd39-ce600ae50601
+  - data_vg: ceph-2311b6bb-f0f1-4df0-9599-93a63e0f9933
+    data: osd-block-674910b1-a8bf-4731-93e0-6b6dfa695bbc
+  - data_vg: ceph-3d9366cf-0bb0-4c1b-8b53-3f48415fe4d0
+    data: osd-block-d52ae9cd-d385-4e94-abd4-00d589ebb2b7
+  - data_vg: ceph-4b1e166d-c7ee-4899-893b-00141492ca65
+    data: osd-block-40b1e1ea-c259-427a-9415-bdc31be0d5fc

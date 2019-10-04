@@ -245,8 +245,7 @@ openstack_config: true
 ceph_mgr_modules: ['status', 'prometheus']
 
 #[osds.yml]
-osd_auto_discovery: true
-osd_scenario: collocated
+osd_scenario: lvm
 
 cinder_ceph_client: cinder
 glance_ceph_client: glance
