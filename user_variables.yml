@@ -21,6 +21,13 @@
 ## Debug and Verbose options.
 debug: false
 
+#repo_build_git_reclone: true
+#repo_build_venv_rebuild: true
+#repo_build_wheel_rebuild: true
+
+#repo_build_upper_constraints_overrides:
+#  - elasticsearch>=6.0.0,<7.0.0
+
 ## Common Glance Overrides
 # Set glance_default_store to "swift" if using Cloud Files backend
 # or "rbd" if using ceph backend; the latter will trigger ceph to get
