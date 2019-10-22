@@ -108,8 +108,8 @@ ceph-osd_hosts: &ceph-osd_hosts
     ip: 172.16.2.7
   tough-rabbit:
     ip: 172.16.2.8
-  new-martin:
-    ip: 172.16.2.9
+#  new-martin:
+#    ip: 172.16.2.9
 
 # galera, memcache, rabbitmq, utility
 shared-infra_hosts: *infrastructure_hosts
