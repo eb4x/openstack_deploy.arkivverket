@@ -117,7 +117,7 @@ shared-infra_hosts: *infrastructure_hosts
 # ceph-mon containers
 ceph-mon_hosts: *infrastructure_hosts
 
-# ceph-mon containers
+# ceph-rgw containers
 ceph-rgw_hosts: *infrastructure_hosts
 
 # repository (apt cache, python packages, etc)
