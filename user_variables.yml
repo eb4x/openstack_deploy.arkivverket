@@ -72,6 +72,7 @@ neutron_provider_networks:
 
 ## Common Horizon Overrides
 horizon_enable_password_retrieve: true
+horizon_show_keystone_v2_rc: false
 
 ## Common Magnum Overrides
 magnum_config_overrides:
