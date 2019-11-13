@@ -131,9 +131,9 @@ repo-infra_hosts: *infrastructure_hosts
 haproxy_hosts: *infrastructure_hosts
 
 # rsyslog server
-#log_hosts:
-#  upward-teal:
-#    ip: 172.16.2.2
+log_hosts:
+  upward-teal:
+    ip: 172.16.2.2
 
 ###
 ### OpenStack
