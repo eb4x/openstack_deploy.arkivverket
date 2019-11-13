@@ -1,9 +1,21 @@
 ---
-osd_scenario: lvm
-devices:
-  - /dev/mapper/mpatha
-  - /dev/mapper/mpathb
-  - /dev/mapper/mpathc
-  - /dev/mapper/mpathd
-  - /dev/mapper/mpathe
-  - /dev/mapper/mpathf
+#devices:
+#  - /dev/mapper/mpatha
+#  - /dev/mapper/mpathb
+#  - /dev/mapper/mpathc
+#  - /dev/mapper/mpathd
+#  - /dev/mapper/mpathe
+#  - /dev/mapper/mpathf
+lvm_volumes:
+  - data_vg:   ceph-5dbc2814-759d-4130-98b1-faa88e3cc6cc
+    data: osd-block-828f31a5-28e3-4d99-a635-9892b617dcbd
+  - data_vg:   ceph-056c60ce-05f0-491f-9aa2-0f7cbbecd98a
+    data: osd-block-b7e1ff53-7453-418e-a5d8-7bffa6e4a5ad
+  - data_vg:   ceph-634985ef-0fba-4085-a0b6-63c7c00a72a6
+    data: osd-block-36c5ffa4-9e44-441f-9357-e54d0d67b971
+  - data_vg:   ceph-49e8c51f-323b-4373-9a45-59010c426923
+    data: osd-block-5a1e59d4-abdb-4289-8e2f-e78e7273bc18
+  - data_vg:   ceph-8000936c-0d33-4ef8-829e-0e581c160a25
+    data: osd-block-55d56fbe-a8a8-4cd0-b0d1-f42d4722a070
+  - data_vg:   ceph-221f0397-083e-488c-b072-50c40f0c4a2e
+    data: osd-block-6a8d711a-f367-4b42-9097-c44db86c0031
