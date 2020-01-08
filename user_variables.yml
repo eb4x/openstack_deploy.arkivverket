@@ -46,6 +46,11 @@ debug: false
 # repositories to install OpenStack using distribution packages
 install_method: source
 
+# Possible bug in ansible 2.5
+# force tempest to not install
+tempest_install: false
+tempest_run: false
+
 ## Common Glance Overrides
 # Set glance_default_store to "swift" if using Cloud Files backend
 # or "rbd" if using ceph backend; the latter will trigger ceph to get
