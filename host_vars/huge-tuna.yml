@@ -1,21 +1,9 @@
 ---
-#devices:
-#  - /dev/mapper/mpatha
-#  - /dev/mapper/mpathb
-#  - /dev/mapper/mpathc
-#  - /dev/mapper/mpathd
-#  - /dev/mapper/mpathe
-#  - /dev/mapper/mpathf
+#[osds.yml]
 lvm_volumes:
-  - data_vg:   ceph-87ce577c-bb15-4e0c-953a-16ecdcd07608
-    data: osd-block-e5ead4e6-be4c-4e24-99c3-991d05cf74aa
-  - data_vg:   ceph-d95871a0-b9fd-4600-ac31-274f9d91d01c
-    data: osd-block-f57c0f56-447f-4ffa-a76c-c99c9b613084
-  - data_vg:   ceph-c6bc2d59-b464-4ac5-89d5-b422a7499597
-    data: osd-block-f0ca523d-d1a2-438d-ae2e-92cb11dc0663
-  - data_vg:   ceph-9add9a1d-5a7c-43be-8b17-5dc139dab266
-    data: osd-block-9112869e-feab-43c2-a59e-a95bae1771ad
-  - data_vg:   ceph-7e61c869-532d-4e36-90b4-9f39e1fcb6e5
-    data: osd-block-49633927-4c9e-4e45-85ff-984a83c7830a
-  - data_vg:   ceph-aa9a8573-1c00-44a1-bf6a-55d7b81797f1
-    data: osd-block-8a9430d9-e794-4db5-bf0b-e730fdef7860
+  - { data_vg: ceph-87ce577c-bb15-4e0c-953a-16ecdcd07608, data: osd-block-e5ead4e6-be4c-4e24-99c3-991d05cf74aa }
+  - { data_vg: ceph-d95871a0-b9fd-4600-ac31-274f9d91d01c, data: osd-block-f57c0f56-447f-4ffa-a76c-c99c9b613084 }
+  - { data_vg: ceph-c6bc2d59-b464-4ac5-89d5-b422a7499597, data: osd-block-f0ca523d-d1a2-438d-ae2e-92cb11dc0663 }
+  - { data_vg: ceph-9add9a1d-5a7c-43be-8b17-5dc139dab266, data: osd-block-9112869e-feab-43c2-a59e-a95bae1771ad }
+  - { data_vg: ceph-7e61c869-532d-4e36-90b4-9f39e1fcb6e5, data: osd-block-49633927-4c9e-4e45-85ff-984a83c7830a }
+  - { data_vg: ceph-aa9a8573-1c00-44a1-bf6a-55d7b81797f1, data: osd-block-8a9430d9-e794-4db5-bf0b-e730fdef7860 }
