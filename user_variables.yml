@@ -76,6 +76,7 @@ cinder_backends:
     rbd_user: "{{ cinder_ceph_client }}"
     rbd_secret_uuid: "{{ cinder_ceph_client_uuid }}"
     report_discard_supported: true
+cinder_service_backup_driver: cinder.backup.drivers.ceph.CephBackupDriver
 
 ## Common Nova Overrides
 nova_galera_database: nova_cell1
