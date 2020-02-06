@@ -25,6 +25,8 @@ debug: false
 #repo_build_venv_rebuild: true
 #repo_build_wheel_rebuild: true
 
+#repo_build_global_links_path: "{{ repo_build_base_path }}/links/{{ repo_build_os_distro_version }}"
+
 #repo_build_upper_constraints_overrides:
 #  - elasticsearch>=6.0.0,<7.0.0
 
