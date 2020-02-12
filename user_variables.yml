@@ -82,6 +82,10 @@ cinder_backends:
 # When nova_libvirt_images_rbd_pool is defined, ceph will be installed on nova
 # hosts.
 nova_libvirt_images_rbd_pool: vms
+nova_cpu_mode: custom
+nova_cpu_model: Westmere-IBRS
+nova_cpu_model_extra_flags:
+  - pcid
 
 ## Common Neutron Overrides
 neutron_dns_domain: "openstack.maas."
