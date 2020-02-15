@@ -175,3 +175,6 @@ network_hosts: *compute_hosts
 
 # magnum
 magnum-infra_hosts: *infrastructure_hosts
+
+# The infra nodes that will be running the placement services
+placement-infra_hosts: *infrastructure_hosts
