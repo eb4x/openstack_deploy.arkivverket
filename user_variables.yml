@@ -268,6 +268,8 @@ security_rhel7_session_timeout: 0
 # Disable if an appropriate NTP client is already installed and configured
 ntp_service_enabled: false
 
+upgrade_ceph_packages: true
+
 ## Ceph cluster fsid (must be generated before first run)
 ## Generate a uuid using: python -c 'import uuid; print(str(uuid.uuid4()))'
 fsid: fedcba98-7654-3210-0123-456789abcdef
