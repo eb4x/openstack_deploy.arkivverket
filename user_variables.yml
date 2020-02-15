@@ -22,7 +22,6 @@
 debug: false
 
 #repo_build_git_reclone: true
-#repo_build_venv_rebuild: true
 #repo_build_wheel_rebuild: true
 
 #repo_build_upper_constraints_overrides:
@@ -96,7 +95,7 @@ neutron_l2_population: true
 neutron_provider_networks:
   network_flat_networks: "physnet1"
   network_mappings: "physnet1:br-provider"
-  network_interface: "{{ ('network_containers' in group_names) | ternary('eth11', 'br-vlan') }}"
+  network_interface_mappings: "br-provider:br-vlan"
   network_types: "vxlan,vlan,flat"
   network_vlan_ranges: "physnet1:3:4,physnet1:203:204,physnet1:1201:1202"
   network_vxlan_ranges: "1:1000"
