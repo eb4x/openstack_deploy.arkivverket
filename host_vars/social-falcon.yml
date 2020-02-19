@@ -1,0 +1,27 @@
+---
+#[osds.yml]
+lvm_volumes:
+  - { data_vg: ceph-9a7d9d69-f0b6-432d-8c66-85d4f4d0aeb6, data: osd-block-8061514b-b651-4030-8700-7b81a73d13a0 }
+  - { data_vg: ceph-9a90c627-7088-4585-85de-4b0a29379935, data: osd-block-d4b2be14-08aa-4fa9-9e61-63be38b4c20d }
+  - { data_vg: ceph-8357e87c-7f89-4cac-b6db-3d3bd4e6b98f, data: osd-block-55a4864d-0419-4b3c-a686-a07670dfd47d }
+  - { data_vg: ceph-3c3df470-f683-4cbb-b01b-60f07101df3c, data: osd-block-d8cb379d-d118-499c-bf7f-e1b9cc3b4bb6 }
+  - { data_vg: ceph-77ad302f-4bac-4804-b3e7-7f89dc38a34a, data: osd-block-169d7b24-2ce7-4315-a41d-6291d3afc0b8 }
+  - { data_vg: ceph-597811b7-38f3-4ecf-a805-e49256faa094, data: osd-block-8abd3a96-3394-42a1-a364-324d23745893 }
+  - { data_vg: ceph-58d156fe-aefc-4dac-a446-32b601c00785, data: osd-block-7c143fc7-8df8-4ebf-807a-53bd2710f367 }
+  - { data_vg: ceph-e39e935c-999d-4cca-bc52-226a05eac32f, data: osd-block-9d4e8c75-2eb0-4e9e-af44-7fe164202b36 }
+  - { data_vg: ceph-4dbcd923-8c56-42b8-9d6d-7b56bd18be5e, data: osd-block-754dc877-61b8-4e83-a997-744f2b21c2ab }
+  - { data_vg: ceph-a2ef3246-2086-423e-b622-18be8f810ecd, data: osd-block-bc467f50-4ea3-459e-ba8c-5ab0d5363702 }
+  - { data_vg: ceph-449b3445-73e8-4900-9ffb-bb5a61547dee, data: osd-block-83b159a1-aeec-45e1-8938-236e3fba112b }
+  - { data_vg: ceph-5f4b77a7-3351-4d04-b229-5807be6c0220, data: osd-block-b641327f-5a94-4799-9b4a-24302afd5799 }
+  - { data_vg: ceph-b5a4b7ee-ec99-48bc-89fb-6f4bb63df6bb, data: osd-block-d404c2dd-6cfa-4eee-a11c-d0826b463dcb }
+  - { data_vg: ceph-d9f61cb4-3c8a-40b6-bf54-13e1d1b28cd8, data: osd-block-008cce31-a25d-481d-a52d-ac9b5cebe55a }
+  - { data_vg: ceph-37c709a7-643d-4184-aac4-17cbb8cb4342, data: osd-block-2fdd68ae-7f0f-4824-81c6-87e379d24f4d }
+  - { data_vg: ceph-bdb1611b-fc38-4d42-97b5-99efab99c908, data: osd-block-a1327579-e1aa-41ba-a351-6695f0e53b7d }
+  - { data_vg: ceph-428890ab-a28d-4aeb-bd76-8a2a902d5dca, data: osd-block-16882f03-c1ed-4340-8a50-ecbb8af8a699 }
+  - { data_vg: ceph-b7f9c057-51ba-482d-a753-9cee911e3238, data: osd-block-6d5e5ab1-a345-41dd-a392-0cfb2d9f0753 }
+  - { data_vg: ceph-3b443cc0-c9c0-4a00-90cd-fefb9e2669d6, data: osd-block-11586960-ebb0-4479-a9a9-e37725e31bc4 }
+  - { data_vg: ceph-0bc54c87-ceb8-4e1e-8430-dd9dda2778c7, data: osd-block-f17f4c6c-97af-4dac-ae7c-a560daa65b22 }
+  - { data_vg: ceph-ef7e44da-e732-4398-992c-078eb9cf4ad6, data: osd-block-d6fc9e11-0baa-4478-b287-270baff64ae5 }
+  - { data_vg: ceph-37781edd-771a-4572-a6ed-9de8d452d59a, data: osd-block-5fa210e3-d7e4-48b5-abde-9bb701aa90b8 }
+  - { data_vg: ceph-b124efa8-cdee-4c50-956a-dc507d8aad21, data: osd-block-d6274546-ad5c-4b31-bb15-1672f3a9be41 }
+  - { data_vg: ceph-f1d53a55-07df-42cc-8163-797beb2848cb, data: osd-block-f58ae682-9613-4a95-a0b4-293ce60fc120 }

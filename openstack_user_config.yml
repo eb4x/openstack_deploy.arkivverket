@@ -105,6 +105,10 @@ compute_hosts: &compute_hosts
     ip: 172.16.2.13
   huge-tuna:
     ip: 172.16.2.16
+  square-imp:
+    ip: 172.16.2.44
+  social-falcon:
+    ip: 172.16.2.45
 
 ceph-osd_hosts: &ceph-osd_hosts
   sought-bug:
@@ -115,6 +119,10 @@ ceph-osd_hosts: &ceph-osd_hosts
     ip: 172.16.2.13
   huge-tuna:
     ip: 172.16.2.16
+  square-imp:
+    ip: 172.16.2.44
+  social-falcon:
+    ip: 172.16.2.45
 
 # galera, memcache, rabbitmq, utility
 shared-infra_hosts: *infrastructure_hosts
