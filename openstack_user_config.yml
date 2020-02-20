@@ -109,6 +109,10 @@ compute_hosts: &compute_hosts
     ip: 172.16.2.44
   social-falcon:
     ip: 172.16.2.45
+  pet-mammal:
+    ip: 172.16.2.46
+  strong-goblin:
+    ip: 172.16.2.47
 
 ceph-osd_hosts: &ceph-osd_hosts
   sought-bug:
@@ -123,6 +127,10 @@ ceph-osd_hosts: &ceph-osd_hosts
     ip: 172.16.2.44
   social-falcon:
     ip: 172.16.2.45
+  pet-mammal:
+    ip: 172.16.2.46
+  strong-goblin:
+    ip: 172.16.2.47
 
 # galera, memcache, rabbitmq, utility
 shared-infra_hosts: *infrastructure_hosts
