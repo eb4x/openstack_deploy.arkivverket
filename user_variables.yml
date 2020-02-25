@@ -85,7 +85,8 @@ cinder_backends:
 # hosts.
 nova_libvirt_images_rbd_pool: vms
 nova_cpu_mode: custom
-nova_cpu_model: Skylake-Server-IBRS
+nova_cpu_model: Westmere-IBRS
+#nova_cpu_model: Skylake-Server-IBRS
 nova_cpu_model_extra_flags:
   - pcid
 
