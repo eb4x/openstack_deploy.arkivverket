@@ -264,6 +264,8 @@ security_ntp_servers:
   - 10.20.21.1
   - 10.17.2.206
   - 10.17.2.221
+security_ntp_server_options: iburst
+security_ntp_sync_rtc: true
 security_rhel7_session_timeout: 0
 
 ## ceph-ansible settings
