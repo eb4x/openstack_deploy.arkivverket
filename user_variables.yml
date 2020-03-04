@@ -78,6 +78,7 @@ cinder_backends:
     report_discard_supported: true
 
 ## Common Nova Overrides
+nova_galera_database: nova_cell1
 # When nova_libvirt_images_rbd_pool is defined, ceph will be installed on nova
 # hosts.
 nova_libvirt_images_rbd_pool: vms
