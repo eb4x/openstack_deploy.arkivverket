@@ -45,6 +45,14 @@ debug: false
 # repositories to install OpenStack using distribution packages
 install_method: source
 
+## Region Name
+#service_region: RegionOne
+
+## OpenStack Domain
+openstack_domain: openstack.maas
+#container_domain: "{{ openstack_domain }}"
+#lxc_container_domain: "{{ container_domain }}"
+
 # Possible bug in ansible 2.5
 # force tempest to not install
 tempest_install: false
