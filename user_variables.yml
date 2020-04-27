@@ -96,6 +96,7 @@ nova_nova_conf_overrides:
   libvirt:
     cpu_model: Westmere-IBRS
     cpu_model_extra_flags: pcid
+nova_virt_type: kvm
 
 ## Common Neutron Overrides
 neutron_dns_domain: "openstack.maas."
