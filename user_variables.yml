@@ -118,6 +118,14 @@ horizon_enable_password_retrieve: true
 horizon_show_keystone_v2_rc: false
 
 ## Common Magnum Overrides
+#magnum_cluster_templates:
+#  - name: k8s
+#    cloud: default
+#    coe: kubernetes
+#    docker_volume_size: 50
+#    external_network_id: openmaas
+#    network_driver: flannel
+
 magnum_config_overrides:
   cinder:
     default_docker_volume_type: RBD
