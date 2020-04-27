@@ -285,8 +285,8 @@ osd_objectstore: bluestore
 # The following sections are supported: [global], [mon], [osd], [mds], [rgw]
 ceph_conf_overrides_custom:
   global:
-    osd_pool_default_pg_num: 512
-    osd_pool_default_pgp_num: 512
+    osd_pool_default_pg_num: 256
+    osd_pool_default_pgp_num: 256
 
 # ceph-ansible automatically creates pools & keys for OpenStack services
 openstack_config: true
