@@ -100,6 +100,8 @@ compute_hosts: &compute_hosts
     ip: 172.16.2.17
   apt-shiner:
     ip: 172.16.2.18
+  pet-mink:
+    ip: 172.16.2.26
 
 ceph-osd_hosts: &ceph-osd_hosts
   free-gnu:
