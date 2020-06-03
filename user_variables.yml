@@ -21,6 +21,8 @@
 ## Debug and Verbose options.
 debug: false
 
+lxc_container_ssh_key: "{{ lookup('file', '/root/.ssh/id_ecdsa.pub') }}"
+
 ## Set the service setup host
 # The default is to use localhost (the deploy host where ansible runs),
 # but any other host can be used. If using an alternative host with all
