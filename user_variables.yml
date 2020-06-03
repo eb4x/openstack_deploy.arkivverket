@@ -30,6 +30,8 @@ repo_build_global_links_path: "{{ repo_build_base_path }}/links/{{ repo_build_os
 #repo_build_upper_constraints_overrides:
 #  - elasticsearch>=6.0.0,<7.0.0
 
+lxc_container_ssh_key: "{{ lookup('file', '/root/.ssh/id_ecdsa.pub') }}"
+
 ## Set the service setup host
 # The default is to use localhost (the deploy host where ansible runs),
 # but any other host can be used. If using an alternative host with all
