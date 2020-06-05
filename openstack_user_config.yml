@@ -146,7 +146,7 @@ identity_hosts: *infrastructure_hosts
 storage-infra_hosts: *infrastructure_hosts
 
 # cinder volume hosts (Ceph RBD-backed)
-storage_hosts: *ceph-osd_hosts
+storage_hosts: *infrastructure_hosts
 
 # glance
 image_hosts: *infrastructure_hosts
@@ -161,7 +161,7 @@ orchestration_hosts: *infrastructure_hosts
 dashboard_hosts: *infrastructure_hosts
 
 # neutron server, agents (L3, etc)
-network_hosts: *compute_hosts
+network_hosts: *infrastructure_hosts
 
 # ceilometer (telemetry data collection)
 #metering-infra_hosts: *infrastructure_hosts
