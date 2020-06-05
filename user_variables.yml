@@ -94,7 +94,7 @@ nova_cpu_model_extra_flags:
 neutron_dns_domain: "openstack.maas."
 neutron_dnsmasq_dns_servers: "10.20.21.1"
 
-neutron_plugin_type: ml2.ovs.dvr
+neutron_plugin_type: ml2.ovs
 neutron_l2_population: true
 neutron_provider_networks:
   network_flat_networks: "physnet1"
