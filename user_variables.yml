@@ -294,6 +294,7 @@ osd_objectstore: bluestore
 # The following sections are supported: [global], [mon], [osd], [mds], [rgw]
 ceph_conf_overrides_custom:
   global:
+    osd_pool_default_autoscale_mode: on
     osd_pool_default_pg_num: 256
     osd_pool_default_pgp_num: 256
 
@@ -301,7 +302,7 @@ ceph_conf_overrides_custom:
 openstack_config: true
 
 #[mgrs.yml]
-ceph_mgr_modules: ['status', 'prometheus']
+ceph_mgr_modules: ['status', 'prometheus', 'pg_autoscaler']
 
 #[osds.yml]
 osd_scenario: lvm
