@@ -293,6 +293,11 @@ osd_objectstore: bluestore
 # using an INI style format.
 # The following sections are supported: [global], [mon], [osd], [mds], [rgw]
 ceph_conf_overrides_custom:
+#  client:
+#    rbd_cache: true
+#    rbd_cache_writethrough_until_flush: true
+#    admin_socket: /var/run/ceph/guests/$cluster-$type.$id.$pid.$cctid.asok
+#    log_file: /var/log/qemu/qemu-guest-$pid.log
   global:
     osd_pool_default_autoscale_mode: on
     osd_pool_default_pg_num: 256
