@@ -23,6 +23,13 @@ debug: false
 
 lxc_container_ssh_key: "{{ lookup('file', '/root/.ssh/id_ecdsa.pub') }}"
 
+venv_default_pip_packages:
+  - elasticsearch
+
+#openstack-ansible/global-requirement-pins.txt
+#venv_build_global_constraints:
+#  - elasticsearch>=7.0.0,<8.0.0
+
 ## Set the service setup host
 # The default is to use localhost (the deploy host where ansible runs),
 # but any other host can be used. If using an alternative host with all
