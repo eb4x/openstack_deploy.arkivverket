@@ -297,6 +297,22 @@ ceph_conf_overrides_custom:
     osd_pool_default_autoscale_mode: on
     osd_pool_default_pg_num: 256
     osd_pool_default_pgp_num: 256
+ceph_conf_overrides_rgw:
+  "client.rgw.{{ hostvars[inventory_hostname]['ansible_hostname'] }}.rgw0":
+    # OpenStack integration with Keystone
+    rgw_keystone_url: "{{ keystone_service_adminuri }}"
+    rgw_keystone_api_version: 3
+    rgw_keystone_admin_user: "{{ radosgw_admin_user }}"
+    rgw_keystone_admin_password: "{{ radosgw_admin_password }}"
+    rgw_keystone_admin_project: "{{ radosgw_admin_tenant }}"
+    rgw_keystone_admin_domain: default
+    rgw_keystone_accepted_roles: 'member, _member_, admin, swiftoperator'
+    rgw_keystone_implicit_tenants: true
+    # Add S3 support, in addition to Swift
+    rgw_enable_apis: 'swift, s3'
+    rgw_s3_auth_use_keystone: true
+    rgw_swift_account_in_url: true
+    rgw_swift_versioning_enabled: true
 
 # ceph-ansible automatically creates pools & keys for OpenStack services
 openstack_config: true
