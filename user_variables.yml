@@ -330,6 +330,7 @@ openstack_glance_pool:
   erasure_profile: ""
   expected_num_objects: ""
   application: "rbd"
+  size: "{{ osd_pool_default_size }}"
 openstack_cinder_pool:
   name: "volumes"
   pg_num: 256
@@ -339,6 +340,7 @@ openstack_cinder_pool:
   erasure_profile: ""
   expected_num_objects: ""
   application: "rbd"
+  size: "{{ osd_pool_default_size }}"
 openstack_nova_pool:
   name: "vms"
   pg_num: 256
@@ -348,15 +350,17 @@ openstack_nova_pool:
   erasure_profile: ""
   expected_num_objects: ""
   application: "rbd"
+  size: "{{ osd_pool_default_size }}"
 openstack_cinder_backup_pool:
   name: "backups"
-  pg_num: "{{ hostvars[groups[mon_group_name][0]]['osd_pool_default_pg_num'] }}"
-  pgp_num: "{{ hostvars[groups[mon_group_name][0]]['osd_pool_default_pg_num'] }}"
+  pg_num: "{{ osd_pool_default_pg_num }}"
+  pgp_num: "{{ osd_pool_default_pg_num }}"
   rule_name: "replicated_rule"
   type: 1
   erasure_profile: ""
   expected_num_objects: ""
   application: "rbd"
+  size: "{{ osd_pool_default_size }}"
 
 openstack_pools:
   - "{{ openstack_glance_pool }}"
