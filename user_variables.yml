@@ -321,6 +321,48 @@ ceph_conf_overrides_rgw:
 
 # ceph-ansible automatically creates pools & keys for OpenStack services
 openstack_config: true
+openstack_glance_pool:
+  name: "images"
+  pg_num: 256
+  pgp_num: 256
+  rule_name: "replicated_rule"
+  type: 1
+  erasure_profile: ""
+  expected_num_objects: ""
+  application: "rbd"
+openstack_cinder_pool:
+  name: "volumes"
+  pg_num: 256
+  pgp_num: 256
+  rule_name: "replicated_rule"
+  type: 1
+  erasure_profile: ""
+  expected_num_objects: ""
+  application: "rbd"
+openstack_nova_pool:
+  name: "vms"
+  pg_num: 256
+  pgp_num: 256
+  rule_name: "replicated_rule"
+  type: 1
+  erasure_profile: ""
+  expected_num_objects: ""
+  application: "rbd"
+openstack_cinder_backup_pool:
+  name: "backups"
+  pg_num: "{{ hostvars[groups[mon_group_name][0]]['osd_pool_default_pg_num'] }}"
+  pgp_num: "{{ hostvars[groups[mon_group_name][0]]['osd_pool_default_pg_num'] }}"
+  rule_name: "replicated_rule"
+  type: 1
+  erasure_profile: ""
+  expected_num_objects: ""
+  application: "rbd"
+
+openstack_pools:
+  - "{{ openstack_glance_pool }}"
+  - "{{ openstack_cinder_pool }}"
+  - "{{ openstack_nova_pool }}"
+  - "{{ openstack_cinder_backup_pool }}"
 
 #[mgrs.yml]
 ceph_mgr_modules: ['status', 'prometheus', 'pg_autoscaler']
