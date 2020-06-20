@@ -307,8 +307,6 @@ ceph_conf_overrides_custom:
 #    log_file: /var/log/qemu/qemu-guest-$pid.log
   global:
     osd_pool_default_autoscale_mode: on
-    osd_pool_default_pg_num: 256
-    osd_pool_default_pgp_num: 256
 ceph_conf_overrides_rgw:
   "client.rgw.{{ hostvars[inventory_hostname]['ansible_hostname'] }}.rgw0":
     # OpenStack integration with Keystone
@@ -330,45 +328,56 @@ ceph_conf_overrides_rgw:
 openstack_config: true
 openstack_glance_pool:
   name: "images"
-  pg_num: 256
-  pgp_num: 256
+  #pg_num: "{{ osd_pool_default_pg_num }}"
+  #pgp_num: "{{ osd_pool_default_pg_num }}"
   rule_name: "replicated_rule"
   type: 1
   erasure_profile: ""
   expected_num_objects: ""
   application: "rbd"
   size: "{{ osd_pool_default_size }}"
+  min_size: "{{ osd_pool_default_min_size }}"
+  pg_autoscale_mode: true
+  target_size_ratio: 0.25
 openstack_cinder_pool:
   name: "volumes"
-  pg_num: 256
-  pgp_num: 256
+  #pg_num: "{{ osd_pool_default_pg_num }}"
+  #pgp_num: "{{ osd_pool_default_pg_num }}"
   rule_name: "replicated_rule"
   type: 1
   erasure_profile: ""
   expected_num_objects: ""
   application: "rbd"
   size: "{{ osd_pool_default_size }}"
+  min_size: "{{ osd_pool_default_min_size }}"
+  pg_autoscale_mode: true
+  target_size_ratio: 0.25
 openstack_nova_pool:
   name: "vms"
-  pg_num: 256
-  pgp_num: 256
+  #pg_num: "{{ osd_pool_default_pg_num }}"
+  #pgp_num: "{{ osd_pool_default_pg_num }}"
   rule_name: "replicated_rule"
   type: 1
   erasure_profile: ""
   expected_num_objects: ""
   application: "rbd"
   size: "{{ osd_pool_default_size }}"
+  min_size: "{{ osd_pool_default_min_size }}"
+  pg_autoscale_mode: true
+  target_size_ratio: 0.25
 openstack_cinder_backup_pool:
   name: "backups"
-  pg_num: "{{ osd_pool_default_pg_num }}"
-  pgp_num: "{{ osd_pool_default_pg_num }}"
+  #pg_num: "{{ osd_pool_default_pg_num }}"
+  #pgp_num: "{{ osd_pool_default_pg_num }}"
   rule_name: "replicated_rule"
   type: 1
   erasure_profile: ""
   expected_num_objects: ""
   application: "rbd"
   size: "{{ osd_pool_default_size }}"
-
+  min_size: "{{ osd_pool_default_min_size }}"
+  pg_autoscale_mode: true
+  target_size_ratio: 0.25
 openstack_pools:
   - "{{ openstack_glance_pool }}"
   - "{{ openstack_cinder_pool }}"
