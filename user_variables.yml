@@ -107,6 +107,9 @@ neutron_provider_networks:
 # If you wish to change the dhcp_domain configured for both nova and neutron
 # dhcp_domain: openstacklocal
 
+## Common Heat Overrides
+heat_stack_domain_admin: heat_domain_admin
+
 ## Common Horizon Overrides
 horizon_enable_password_retrieve: true
 horizon_show_keystone_v2_rc: false
