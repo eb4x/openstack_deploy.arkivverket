@@ -183,3 +183,6 @@ placement-infra_hosts: *infrastructure_hosts
 
 # barbican
 key-manager_hosts: *infrastructure_hosts
+
+# designate
+dnsaas_hosts: *infrastructure_hosts
