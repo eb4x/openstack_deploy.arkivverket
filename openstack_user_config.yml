@@ -151,6 +151,9 @@ storage_hosts: *infrastructure_hosts
 # glance
 image_hosts: *infrastructure_hosts
 
+# placement
+placement-infra_hosts: *infrastructure_hosts
+
 # nova api, conductor, etc services
 compute-infra_hosts: *infrastructure_hosts
 
@@ -177,9 +180,6 @@ network_hosts: *infrastructure_hosts
 
 # magnum
 magnum-infra_hosts: *infrastructure_hosts
-
-# The infra nodes that will be running the placement services
-placement-infra_hosts: *infrastructure_hosts
 
 # barbican
 key-manager_hosts: *infrastructure_hosts
